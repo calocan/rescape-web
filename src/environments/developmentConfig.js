@@ -1,7 +1,6 @@
-import privateConfig from 'config.js';
-import {mergeDeep} from 'rescape-ramda';
 
-export const environmentConfig = mergeDeep(privateConfig, {
+
+export const environmentConfig = {
   settings: {
     mapbox: {
       mapboxApiAccessToken: 'pk.eyJ1IjoiY2Fsb2NhbiIsImEiOiJjaXl1aXkxZjkwMG15MndxbmkxMHczNG50In0.07Zu3XXYijL6GJMuxFtvQg',
@@ -16,4 +15,4 @@ export const environmentConfig = mergeDeep(privateConfig, {
       root: '/graphql/'
     }
   }
-});
+};

@@ -95,7 +95,7 @@
     "rescape-helpers-component": "^1.5.28",
     "rescape-osm": "^0.0.7",
     "rescape-ramda": "^1.5.8",
-    "rescape-sample-data": "^1.2.37",
+    "rescape-sample-data": "^1.2.45",
     "rescape-validate": "^1.2.10",
     "reselect": "^3.0.1",
     "style-loader": "0.23.0",
