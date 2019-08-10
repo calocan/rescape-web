@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom';
 import './styles/index.css';
-import app from 'components/app';
+import App from 'components/app';
 import registerServiceWorker from './registerServiceWorker';
-import {BrowserRouter as browserRouter} from 'react-router-dom';
-import {ApolloProvider as apolloProvider} from 'react-apollo';
-import {Provider as provider} from 'react-redux';
+import {BrowserRouter} from 'react-router-dom';
+import {ApolloProvider} from 'react-apollo';
+import {Provider} from 'react-redux';
 import {eMap} from 'rescape-helpers-component';
 import createClient from 'rescape-apollo';
 import rootReducer from 'reducers';
@@ -14,7 +14,9 @@ import {currentConfig} from 'helpers/testHelpers'
 import {calculateResponsiveState} from 'redux-responsive';
 import createInitialState from 'initialState';
 
-const [BrowserRouter, ApolloProvider, Provider, App] = eMap([browserRouter, apolloProvider, provider, app]);
+const [browserRouter, apolloProvider, provider, app] = eMap(
+  [BrowserRouter, ApolloProvider, Provider, App]
+);
 
 // Create a store based on the configured environment (development, production, test)
 const initialState = createInitialState(currentConfig);
@@ -26,16 +28,18 @@ store.dispatch(calculateResponsiveState(window));
 
 
 // Render the React components
-// BrowserRouter routes anything defined in a child component Switch
-// ApolloProvider wraps our components with the ApolloClient so we can access GraphQL data from anywhere
-// 'root' is the id of the <div> defined in index.html
 ReactDOM.render(
-  BrowserRouter({basename: '/'},
-    Provider({store},
-      ApolloProvider({client: createClient({store})},
-        App()
+  // BrowserRouter routes anything defined in a child component Switch
+  browserRouter({basename: '/'},
+    // The Redux provider. This will probably be removed
+    provider({store},
+      // ApolloProvider wraps our components with the ApolloClient so we can access GraphQL data from anywhere
+      apolloProvider({client: createClient({store})},
+        app()
       )
     )
   ),
-  document.getElementById('root'));
+  // 'root' is the id of the <div> defined in index.html
+  document.getElementById('root')
+);
 registerServiceWorker();
