@@ -141,7 +141,7 @@
     "longjohn": "^0.2.12",
     "mini-css-extract-plugin": "^0.4.2",
     "nock": "^9.6.1",
-    "react-dev-utils": "6.0.0-next.a671462c",
+    "react-dev-utils": "11.0.4",
     "react-mock-router": "^1.0.15",
     "redux-devtools-extension": "^2.13.5",
     "redux-mock-provider": "^1.0.0",
