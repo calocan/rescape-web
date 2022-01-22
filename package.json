@@ -62,7 +62,7 @@
     "moment-duration-format": "^2.2.2",
     "morgan": "^1.9.0",
     "namedtuplemap": "^1.0.0",
-    "node-fetch": "^2.2.0",
+    "node-fetch": "^3.1.1",
     "numeral": "^2.0.6",
     "object-assign": "4.1.1",
     "parse-decimal-number": "^1.0.0",
