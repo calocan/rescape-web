@@ -58,7 +58,7 @@
     "install": "^0.12.1",
     "jest": "23.5.0",
     "memoize-immutable": "^3.0.0",
-    "moment": "^2.22.2",
+    "moment": "^2.29.2",
     "moment-duration-format": "^2.2.2",
     "morgan": "^1.9.0",
     "namedtuplemap": "^1.0.0",
